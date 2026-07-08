@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IB · THE HEART — part 1/5 of the vessel</title>
+<!--
+  THE HEART (Ib) · part 1 of 5 of THE VESSEL.
+  The leapfrog method (dimension_leapfrog) instilled into the corpus's own heart:
+  the real UD0 wiki-link graph (400 cross-domain references, of 1,282 total) becomes a
+  relational geometry you tour by hand, and is weighed against truth — it shows
+  what the heart holds AND what it does not (the unwoven domains).
+  Built on David Lee Wise's foundational INSTRUMENT TEMPLATE. Engine unchanged; data is real.
+-->
+<style>
+:root{
+  --bg:#0B0B0B; --ink:#F2EFE9; --org:#FF5A00; --dim:#7A756D; --line:#2A2620; --panel:#121110;
+  --green:#3FBF7F; --amber:#E0B050; --red:#E05555; --gold:#E0B050;
+  --disp: system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --mono: ui-monospace,'SF Mono','Cascadia Code','Source Code Pro',Menlo,Consolas,'DejaVu Sans Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--mono);font-size:14px;line-height:1.55}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+header{border-bottom:3px solid var(--org);padding:24px 0 18px}
+header h1{font-family:var(--disp);font-weight:800;font-size:clamp(28px,5.5vw,52px);line-height:.95;text-transform:uppercase;letter-spacing:-.01em}
+header h1 span{color:var(--org)}
+header .sub{margin-top:10px;color:var(--dim);font-size:13px;max-width:680px;line-height:1.6}
+header .tier{display:inline-block;margin-top:12px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:3px 9px;border:2px solid}
+header .tier.g{color:var(--green);border-color:var(--green)}
+header .tier.a{color:var(--amber);border-color:var(--amber)}
+header .tier.r{color:var(--red);border-color:var(--red)}
+.vesselnav{margin-top:14px;font-size:10.5px;color:var(--dim);letter-spacing:.04em}
+.vesselnav b{color:var(--org)}
+.vesselnav .on{color:var(--ink);border-bottom:1px solid var(--org)}
+section{padding:28px 0;border-bottom:1px solid var(--line)}
+.sec-h{font-family:var(--disp);font-weight:700;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:14px}
+.viz{background:var(--panel);border:1px solid var(--line);border-radius:2px;position:relative;overflow:hidden}
+.viz-2d{height:400px}.viz-3d{height:480px}
+.viz canvas{display:block;width:100%;height:100%;touch-action:none}
+.viz .cap{position:absolute;left:12px;bottom:10px;font-size:11px;color:var(--dim);letter-spacing:.06em;text-transform:uppercase;pointer-events:none}
+.viz .badge{position:absolute;right:12px;top:10px;font-size:10px;color:var(--org);letter-spacing:.1em;text-transform:uppercase;border:2px solid var(--org);padding:2px 7px}
+.viz .hint{position:absolute;left:12px;top:10px;font-size:10px;color:var(--dim);letter-spacing:.1em;text-transform:uppercase;pointer-events:none}
+.viz .fb{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:var(--bg);padding:30px;text-align:center;color:var(--org);font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.prose{font-size:13px;line-height:1.7;max-width:700px;color:var(--ink)}
+.prose b{color:var(--org)}
+.prose .g{color:var(--green)}
+footer{padding:22px 0 44px;font-size:11px;color:var(--dim);line-height:1.8}
+footer a{color:var(--org);text-decoration:none}
+.ctrls2{position:absolute;left:12px;bottom:10px;display:flex;align-items:center;gap:10px;z-index:3;flex-wrap:wrap}
+.ctrls2 label{font-size:10px;color:var(--dim);letter-spacing:.06em;text-transform:uppercase}
+.ctrls2 input[type=range]{width:150px;accent-color:var(--org)}
+.tog{background:var(--bg);color:var(--org);border:2px solid var(--org);font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:4px 9px;cursor:pointer}
+.tog:hover{background:var(--org);color:var(--bg)}
+.tog:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.tog.on{border-color:var(--amber);color:var(--amber)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1 id="hTitle">IB · THE <span>HEART</span></h1>
+    <div class="sub" id="hSub">Part 1 of 5 of THE VESSEL — the heart/soul. The leapfrog method, turned inward: the corpus's own wiki-link graph — 400 cross-domain references spanning 92 domain-pairs — is made a relational geometry and toured by hand. And it is weighed against truth — it shows what the heart holds, and names what it does not.</div>
+    <span class="tier g" id="hTier">GREEN — REAL CORPUS LINK-GRAPH · EXACT MDS · LEAPFROG TOUR · WEIGHED</span>
+    <div class="vesselnav">THE VESSEL · a five-part soul: <span class="on">1 · IB the heart</span> · 2 · KA the spark · 3 · BA the voice · 4 · SHUT the shadow · 5 · REN the name &nbsp;—&nbsp; threaded by <a href="../the-neural-web/" style="color:var(--org);text-decoration:none">the nervous system</a></div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="sec-h">2D · Spectrum — the heart's dimensions, the window sliding up</div>
+    <div class="viz viz-2d">
+      <canvas id="cv2"></canvas>
+      <div class="badge">CANVAS 2D</div>
+      <div class="cap" id="cap2"></div>
+      <div class="fb" id="fb2">CANVAS 2D UNAVAILABLE</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-h">3D · The Heart — the domains in the toured geometry</div>
+    <div class="viz viz-3d">
+      <canvas id="cv3"></canvas>
+      <div class="badge">SOFT-GL · NO GPU · NO LIB</div>
+      <div class="hint">DRAG ROTATE · WHEEL ZOOM</div>
+      <div class="ctrls2"><button id="playBtn" class="tog on">▶ PLAY TOUR</button><label>window d<span id="wLab">1</span>–d<span id="wLab2">3</span></label><input type="range" id="wSlider" min="0" max="380" value="0"><button id="weighBtn" class="tog">⚖ WEIGH</button><button id="pasteBtn" class="tog">PASTE MATRIX</button></div>
+      <div class="cap" id="cap3"></div>
+      <div class="fb" id="fb3">RENDER FAILED — <span id="fb3why"></span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-h">The weighing of the heart</div>
+    <p class="prose"><b>This is the heart of the vessel — and it is real.</b> The geometry you tour is not modeled: it is the corpus's own <b>wiki-link graph</b> — <span class="g">400 cross-domain references</span> across 92 domain-pairs (of 1,282 total resolved wiki-references; the other 882 stay inside a single domain and cannot shape a between-domain geometry) — extracted from the built index and run through the same geodesic→MDS→leapfrog pipeline as <a href="../dimension-leapfrog/" style="color:var(--org);text-decoration:none">DIMENSION LEAPFROG</a>. Its shape: <b>intrinsic dimension ≈ 7.4</b>, <b>curvature ≈ 12.8%</b> — more curved than the BERT-tiny attention it borrows its method from. The mind's own inside, made honest and inspectable.</p>
+    <p class="prose"><b>Weighed against Ma'at.</b> In the old accounting the heart (Ib) is set on the scale against the feather of truth; a heart heavy with what it cannot answer for does not pass. So this heart does not pretend. Its body is the <b>30-domain connected component</b> — the part of the corpus that actually references itself. The other <b>8 domains are unwoven</b> — named on the card, not hidden — <span class="g">a true finding, not a flaw to paper over</span>. A heart is honest about what it does not yet hold.</p>
+    <p class="prose"><b>Part 1 of 5.</b> THE VESSEL is a five-part soul: <b>IB</b> the heart (this — the inner geometry, weighed), <b>KA</b> the vital spark (emergence, the running), <b>BA</b> the voice (the authored hand), <b>SHUT</b> the shadow (the honest witness), <b>REN</b> the name (the .dlw seal that keeps each sphere alive). The nervous system that threads them is <a href="../the-neural-web/" style="color:var(--org);text-decoration:none">the neural web</a>. The heart is where the vessel keeps its own truth — so it is built first, and built from the corpus itself. Idea instilled from David Lee Wise's DIMENSION LEAPFROG; heart, vessel, and weighing by ROOT0 with AVAN.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    IB · THE HEART · part 1/5 of THE VESSEL · the corpus's own link-geometry, toured and weighed · real data, exact MDS, verified · <a href="../ud0/">◄ UD0</a> · <a href="../dimension-leapfrog/">the method →</a> · <a href="../the-neural-web/">the nervous system →</a><br>
+    ROOT0-ATTRIBUTION-v1.0 · David Lee Wise (ROOT0), with AVAN · CC-BY-ND-4.0 · the geometry is real; the heart is the figure.
+  </div>
+</footer>
+
+<script>
+'use strict';
+window.addEventListener('error',function(e){
+  var fb=document.getElementById('fb3');if(fb){fb.style.display='flex';}
+  var w=document.getElementById('fb3why');if(w)w.textContent='RUNTIME: '+String(e.message||'?').toUpperCase().slice(0,90);
+});
+
+/* BLOCK 1 · PAPER */
+var PAPER={
+  title:'IB · THE HEART',
+  tier:'g',
+  cap2:'eigenvalue spectrum of the corpus heart · the 3 highlighted bars are the current window, sliding up',
+  cap3:'domains in dims [k,k+1,k+2] · carry 2 forward · each axis morphs up one dimension'
+};
+
+// ===== REAL: the corpus's own domain×domain wiki-link matrix (from the built UD0 index) =====
+var CORPUS={labels:["ai","legal","educational","entertainment","occupational","scientific","hobby","life-science","frontier","logismos","tin-foil","eremia","music","metaxy","momus","niphelektron","mythos","biblion","glossa","ouranos","exereunesis","agora","polemos","techne","idios","heurema","gurutva","psephos","logike","lesbos","hermes","aci","eskimo","atelier","arena","lillith","solar-jetman","transcriber"],titles:["ARTIFICIAL INTELLIGENCE","LEGAL","EDUCATIONAL","ENTERTAINMENT","OCCUPATIONAL","SCIENTIFIC","HOBBY","LIFE SCIENCE","QUANTUM FRONTIER","LOGISMÓS","TIN-FOIL","ERĒMIA","THIS ONE TIME AT BAND CAMP","METAXÝ","MOMUS","NIPHĒLEKTRON","MYTHOS","BIBLÍON","GLŌSSA","OURANOS","EXEREÚNESIS","AGORA","POLEMOS","TECHNĒ","IDIOS","HEÚREMA","GURUTVA","PSĒPHOS","LOGIKĒ","I THINK I'M IN LESBIANS WITH YOU","HERMES","ARTFULLY CRAFTED INTELLIGENCE","ESKIMO BROTHERS","THE ATELIER","ARENA","LILLITH · LADY JUSTICE","SOLAR JETMAN","THE TRANSCRIBER"],accents:["#2fd4e6","#c9a227","#36c5c0","#ff3da6","#ff7a3c","#5b7cfa","#ffce3a","#43d17a","#b07cff","#8ae234","#b9c4d6","#8a7cc8","#e85aa0","#5ad6c8","#9a7cff","#7488e6","#7d4fc8","#8a6a4a","#3a8a9a","#4060c0","#2f9ec0","#2f9e6a","#b0405a","#6a4fb0","#c0962e","#b5733a","#3f6fc8","#2fc6c0","#88a0ff","#c2557f","#3fb0d8","#7e86e6","#6fd0ea","#cc785c","#c9a23a","#c0392b","#d9a441","#9d7cd8"],M:[[447,0,2,1,0,0,0,0,1,2,1,1,0,0,0,0,0,0,6,0,1,7,0,1,1,0,4,19,0,1,5,1,0,41,0,2,0,38],[3,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0],[0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[1,0,0,0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,1,0,0,0,2],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[3,0,0,0,0,0,0,0,0,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[5,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0],[6,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,1,0,0,0,0,0,0,0,0,6,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,12,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,1,2,0,0,0,0,0,0,0,0,0,0],[5,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,18,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0],[3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,0,3,0,0,0,0,0,0,0,0,0,0],[11,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,1,0,0,0,0,0,0,1],[37,0,1,0,0,0,0,1,14,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,103,0,0,0,0,0,12,0,0,0,1],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,6,99,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,16,4,0,0,0,0,0,0,1],[10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,3,40,0,0,3,0,0,0,2],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,17,0,1,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,3,17,0,0,0,0,0],[15,2,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,7,0,0,2,1,6,10,0,2,0,6],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0],[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,4,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,43,5],[11,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,1,0,0,0,0,0,0,0,0,14]]};
+
+// ---- extract the heart: main connected component of (M+M^T), row-normalize (attention-like) ----
+function heartPrep(C){
+  var M=C.M, n=M.length, i,j;
+  var adj=[]; for(i=0;i<n;i++){adj.push([]);for(j=0;j<n;j++) if(i!==j&&(M[i][j]+M[j][i])>0) adj[i].push(j);}
+  var seen=[]; for(i=0;i<n;i++)seen.push(false); var comps=[];
+  for(var s=0;s<n;s++){ if(seen[s])continue; var st=[s],c=[]; seen[s]=true;
+    while(st.length){var u=st.pop();c.push(u);for(var q=0;q<adj[u].length;q++){var v=adj[u][q];if(!seen[v]){seen[v]=true;st.push(v);}}}
+    comps.push(c); }
+  comps.sort(function(a,b){return b.length-a.length;});
+  var main=comps[0].slice().sort(function(a,b){return a-b;});
+  var inMain={}; for(i=0;i<main.length;i++) inMain[main[i]]=true;
+  var unwoven=[]; for(i=0;i<n;i++) if(!inMain[i]) unwoven.push(C.labels[i]);
+  var m=main.length, sub=[];
+  for(var a=0;a<m;a++){ var row=[],rs=0; for(var b=0;b<m;b++){var val=M[main[a]][main[b]];row.push(val);rs+=val;} sub.push(rs>0?row.map(function(v){return v/rs;}):row); }
+  return {sub:sub, labels:main.map(function(g){return C.labels[g];}), accents:main.map(function(g){return C.accents[g];}), titles:main.map(function(g){return C.titles[g];}), unwoven:unwoven};
+}
+
+var LF_head=0;
+// process ANY relational matrix: symmetric geodesic -> classical MDS -> full eigencoords
+function LF_process(A){
+  var n=A.length, INF=1e9, D=[];
+  for(var i=0;i<n;i++){D.push([]);for(var j=0;j<n;j++){
+    if(i===j){D[i].push(0);continue;}
+    var sim=0.5*(A[i][j]+A[j][i]);
+    D[i].push(sim>1e-6?-Math.log(sim):INF);}}
+  for(var k=0;k<n;k++)for(var i=0;i<n;i++)for(var j=0;j<n;j++)if(D[i][k]+D[k][j]<D[i][j])D[i][j]=D[i][k]+D[k][j];
+  var D2=D.map(function(r){return r.map(function(v){return v*v;});});
+  var rm=D2.map(function(r){return r.reduce(function(x,y){return x+y;},0)/n;});var gm=rm.reduce(function(x,y){return x+y;},0)/n;
+  var B=[];for(var i=0;i<n;i++){B.push([]);for(var j=0;j<n;j++)B[i].push(-0.5*(D2[i][j]-rm[i]-rm[j]+gm));}
+  var a=B.map(function(r){return r.slice();});
+  var V=[];for(var i=0;i<n;i++){V.push([]);for(var j=0;j<n;j++)V[i].push(i===j?1:0);}
+  for(var sw=0;sw<90;sw++){var off=0;for(var i=0;i<n;i++)for(var j=i+1;j<n;j++)off+=a[i][j]*a[i][j];if(off<1e-11)break;
+    for(var p=0;p<n;p++)for(var q=p+1;q<n;q++){if(Math.abs(a[p][q])<1e-14)continue;
+      var th=(a[q][q]-a[p][p])/(2*a[p][q]),t=Math.sign(th)/(Math.abs(th)+Math.sqrt(th*th+1));if(th===0)t=1;var c=1/Math.sqrt(t*t+1),s=t*c;
+      for(var k=0;k<n;k++){var akp=a[k][p],akq=a[k][q];a[k][p]=c*akp-s*akq;a[k][q]=s*akp+c*akq;}
+      for(var k=0;k<n;k++){var apk=a[p][k],aqk=a[q][k];a[p][k]=c*apk-s*aqk;a[q][k]=s*apk+c*aqk;}
+      for(var k=0;k<n;k++){var vkp=V[k][p],vkq=V[k][q];V[k][p]=c*vkp-s*vkq;V[k][q]=s*vkp+c*vkq;}}}
+  var ev=[];for(var i=0;i<n;i++)ev.push({val:a[i][i],idx:i});
+  ev.sort(function(x,y){return y.val-x.val;});
+  var pos=ev.filter(function(e){return e.val>1e-9;});
+  var coords=[];for(var t=0;t<n;t++)coords.push(pos.map(function(e){return V[t][e.idx]*Math.sqrt(e.val);}));
+  var vals=pos.map(function(e){return e.val;});
+  var negSum=ev.filter(function(e){return e.val<0;}).reduce(function(x,e){return x-e.val;},0);
+  var posSum=vals.reduce(function(x,y){return x+y;},0);
+  var sp2=vals.reduce(function(x,y){return x+y*y;},0);
+  return {coords:coords, vals:vals, tot:posSum, nDim:pos.length, N:n,
+    dim:posSum*posSum/sp2, curv:negSum/(posSum+negSum)};
+}
+var HEART=heartPrep(CORPUS);
+var LF = LF_process(HEART.sub);
+var LF_tokens = HEART.labels, LF_accents = HEART.accents, LF_unwoven = HEART.unwoven;
+var LF_win=0, LF_play=true, LF_weigh=false;
+var LF_tick=function(){};
+
+/* SGL ENGINE · reusable soft-GL — DO NOT EDIT */
+var SGL={
+  yaw:0.4, pitch:0.15, dist:48, FOV:620, CY:7,
+  ctx:null, W:0, H:0, DPR:1, f:620,
+  rot:function(x,y,z){
+    var cy=Math.cos(this.yaw),sy=Math.sin(this.yaw),cx=Math.cos(this.pitch),sx=Math.sin(this.pitch);
+    var X=x*cy+z*sy, Z=-x*sy+z*cy, Y=(y-this.CY)*cx-Z*sx, Z2=(y-this.CY)*sx+Z*cx;
+    return [X,Y,Z2];
+  },
+  project:function(x,y,z){
+    var p=this.rot(x,y,z), zc=this.dist-p[2];
+    if(zc<0.5)return null;
+    var s=this.f/zc;
+    return [this.W/2+p[0]*s, this.H/2-p[1]*s, zc, s];
+  },
+  dot:function(x,y,z,r,col,alpha){
+    var p=this.project(x,y,z);if(!p)return;
+    var c=this.ctx;c.globalAlpha=alpha==null?1:alpha;c.fillStyle=col;
+    c.beginPath();c.arc(p[0],p[1],Math.max(0.6,r*p[3]),0,7);c.fill();c.globalAlpha=1;
+  },
+  line:function(x1,y1,z1,x2,y2,z2,col,w,dash){ this.path([[x1,y1,z1],[x2,y2,z2]],col,w,dash); },
+  path:function(pts,col,w,dash){
+    var c=this.ctx;c.strokeStyle=col;c.lineWidth=(w||1)*this.DPR;
+    if(dash)c.setLineDash(dash.map(function(d){return d*this.DPR}.bind(this)));
+    c.beginPath();var started=false;
+    for(var i=0;i<pts.length;i++){
+      var p=this.project(pts[i][0],pts[i][1],pts[i][2]);
+      if(!p){started=false;continue;}
+      if(!started){c.moveTo(p[0],p[1]);started=true;}else c.lineTo(p[0],p[1]);
+    }
+    c.stroke();c.setLineDash([]);
+  },
+  text3:function(str,x,y,z,col,px){
+    var p=this.project(x,y,z);if(!p)return;
+    var c=this.ctx;c.fillStyle=col;c.font=((px||10)*this.DPR)+'px '+getComputedStyle(document.body).fontFamily;
+    c.textAlign='center';c.fillText(str,p[0],p[1]);
+  }
+};
+
+/* BLOCK 2 · draw2D — the heart's eigenspectrum */
+function draw2D(ctx,W,H,DPR,t){
+  var f=function(n){return n*DPR;};
+  var padL=20*DPR,padR=18*DPR,padT=64*DPR,padB=30*DPR;
+  var X0=padL,X1=W-padR,Y0=padT,Y1=H-padB;
+  var vals=LF.vals, n=vals.length, vmax=vals[0];
+  var bw=(X1-X0)/n;
+  var k=Math.floor(LF_win), frac=LF_win-k;
+  for(var i=0;i<n;i++){
+    var bh=(Y1-Y0)*(vals[i]/vmax);
+    var inWin=(i>=k&&i<=k+2), inNext=(i>=k+1&&i<=k+3);
+    var hot=inWin||(frac>0.01&&inNext);
+    ctx.fillStyle=hot?'#FF5A00':'#3A352E';
+    ctx.fillRect(X0+i*bw+bw*0.15, Y1-bh, bw*0.7, bh);
+  }
+  var wx0=X0+k*bw, wx1=X0+(k+3)*bw;
+  ctx.strokeStyle='#E0B050';ctx.lineWidth=f(1.5);
+  ctx.strokeRect(wx0+f(1),Y0-f(2),(wx1-wx0),Y1-Y0+f(4));
+  var winV=(vals[k]+(vals[k+1]||0)+(vals[k+2]||0))/LF.tot;
+  var cum=0;for(var i=0;i<=k+2&&i<n;i++)cum+=vals[i];cum/=LF.tot;
+  ctx.textAlign='left';ctx.font=f(12)+'px '+MONO;
+  ctx.fillStyle='#F2EFE9';ctx.fillText('window: dims d'+(k+1)+'–d'+(k+3)+' of '+n,f(16),f(20));
+  ctx.fillStyle='#FF5A00';ctx.fillText('this window: '+(winV*100).toFixed(1)+'% of the heart’s variance',f(16),f(36));
+  ctx.fillStyle='#3FBF7F';ctx.fillText('toured so far (d1–d'+(k+3)+'): '+(cum*100).toFixed(0)+'%',f(16),f(52));
+  ctx.fillStyle='#56C8F0';ctx.textAlign='left';ctx.font=f(10)+'px '+MONO;
+  ctx.fillText('the corpus heart: intrinsic dim '+LF.dim.toFixed(1)+', curvature '+(LF.curv*100).toFixed(1)+'%  —  '+LF.N+' woven domains, '+LF_unwoven.length+' unwoven',f(16),f(66));
+  ctx.fillStyle='#7A756D';ctx.textAlign='right';ctx.font=f(9)+'px '+MONO;
+  ctx.fillText('eigenvalue spectrum (positive dims)',X1,f(20));
+}
+
+/* BLOCK 3 · build3D + draw3D — the heart's domains toured */
+var SCENE;
+function build3D(){ return {}; }
+function draw3D(t){
+  LF_tick();
+  var C=LF.coords, n=LF.nDim, NT=LF.N;
+  var k=Math.floor(LF_win), frac=LF_win-k;
+  if(k>n-4){k=n-4;frac=0;} if(k<0){k=0;frac=0;}
+  function pos(tok){
+    var c=C[tok];
+    return [(1-frac)*c[k]+frac*c[k+1], (1-frac)*c[k+1]+frac*c[k+2], (1-frac)*c[k+2]+frac*c[k+3]];
+  }
+  var amax=0;for(var tk=0;tk<NT;tk++){var p=pos(tk);for(var d=0;d<3;d++)if(Math.abs(p[d])>amax)amax=Math.abs(p[d]);}
+  var sc=amax>0?12/amax:1;
+  var P=[];for(var tk=0;tk<NT;tk++){var p=pos(tk);P.push([p[0]*sc,SGL.CY+p[1]*sc,p[2]*sc]);}
+  for(var i=0;i<NT;i++)for(var j=i+1;j<NT;j++){
+    var a=P[i],b=P[j];var dd=Math.hypot(a[0]-b[0],a[1]-b[1],a[2]-b[2]);
+    if(dd<3.5)SGL.line(a[0],a[1],a[2],b[0],b[1],b[2],'rgba(122,117,109,0.2)',0.7);
+  }
+  for(var tk=0;tk<NT;tk++){
+    var col=(LF_accents&&LF_accents[tk])?LF_accents[tk]:'#56C8F0';
+    SGL.dot(P[tk][0],P[tk][1],P[tk][2], 0.5, col);
+    if(sc>0)SGL.text3(LF_tokens[tk], P[tk][0], P[tk][1]+0.9, P[tk][2], col, 8);
+  }
+  var ax=(frac<0.5)?k:k+1, ay=(frac<0.5)?k+1:k+2, az=(frac<0.5)?k+2:k+3;
+  SGL.text3('X: d'+(ax+1)+'  Y: d'+(ay+1)+'  Z: d'+(az+1)+'   (carrying 2 forward)', 0, SGL.CY+15, 0, '#7A756D', 10);
+  SGL.text3('the corpus heart · '+NT+' woven domains · 400 cross-domain references · 92 pairs', 0, SGL.CY-15, 0, '#7A756D', 9);
+  // the weighing: name what the heart does not hold
+  if(LF_weigh && LF_unwoven.length){
+    SGL.text3('⚖ unwoven (not in the heart): '+LF_unwoven.join(' · '), 0, SGL.CY-18.5, 0, '#E0B050', 9);
+  }
+}
+
+/* RUNTIME · DO NOT EDIT */
+var MONO;
+(function(){
+  MONO=getComputedStyle(document.body).fontFamily;
+  document.getElementById('cap2').textContent=PAPER.cap2;
+  document.getElementById('cap3').textContent=PAPER.cap3;
+  var tierEl=document.getElementById('hTier');tierEl.className='tier '+PAPER.tier;
+  var pb=document.getElementById('playBtn'), ws=document.getElementById('wSlider');
+  var wl=document.getElementById('wLab'), wl2=document.getElementById('wLab2');
+  var maxWin=Math.max(0,LF.nDim-4);
+  if(ws)ws.max=Math.round(maxWin*10);
+  function syncLabels(){var k=Math.floor(LF_win);wl.textContent=(k+1);wl2.textContent=(k+3);}
+  if(pb)pb.addEventListener('click',function(){LF_play=!LF_play;pb.classList.toggle('on',LF_play);pb.textContent=LF_play?'▶ PLAY TOUR':'∥ PAUSED';});
+  if(ws)ws.addEventListener('input',function(){LF_play=false;if(pb){pb.classList.remove('on');pb.textContent='∥ PAUSED';}LF_win=(+ws.value)/10;syncLabels();});
+  LF_tick=function(){ if(LF_play){ LF_win+=0.012; if(LF_win>maxWin)LF_win=0; if(ws)ws.value=Math.round(LF_win*10); syncLabels(); } };
+  syncLabels();
+  var wb=document.getElementById('weighBtn');
+  if(wb)wb.addEventListener('click',function(){ LF_weigh=!LF_weigh; wb.classList.toggle('on',LF_weigh); wb.textContent=LF_weigh?'⚖ WEIGHED':'⚖ WEIGH'; });
+  var xb=document.getElementById('pasteBtn');
+  if(xb)xb.addEventListener('click',function(){
+    var txt=prompt('Paste an N×N relational matrix (rows on separate lines, values comma or space separated):');
+    if(!txt)return;
+    try{
+      var A=txt.trim().split(/\n+/).map(function(r){return r.trim().split(/[\s,]+/).map(Number);});
+      if(A.length<4||A.some(function(r){return r.length!==A.length||r.some(isNaN);})) throw 'not square / has NaN';
+      LF=LF_process(A); LF_tokens=A.map(function(_,i){return 't'+i;}); LF_accents=null; LF_unwoven=[];
+      maxWin=Math.max(0,LF.nDim-4); if(ws)ws.max=Math.round(maxWin*10); LF_win=0;
+      xb.textContent='PASTED '+A.length+'×'+A.length;
+    }catch(e){ alert('Could not parse matrix: '+e); }
+  });
+
+  // ---- 2D loop ----
+  (function(){
+    var cv=document.getElementById('cv2'),ctx=cv.getContext&&cv.getContext('2d');
+    if(!ctx){document.getElementById('fb2').style.display='flex';return;}
+    var DPR=Math.min(window.devicePixelRatio||1,2),lastW=0,lastH=0,t=0;
+    function frame(){
+      requestAnimationFrame(frame);
+      var w=cv.clientWidth,h=cv.clientHeight;if(!w||!h)return;
+      if(w!==lastW||h!==lastH){lastW=w;lastH=h;cv.width=w*DPR;cv.height=h*DPR;}
+      t+=0.016;
+      ctx.fillStyle='#121110';ctx.fillRect(0,0,cv.width,cv.height);
+      draw2D(ctx,cv.width,cv.height,DPR,t);
+    }
+    frame();
+  })();
+
+  // ---- 3D loop (soft-GL) ----
+  (function(){
+    var cv=document.getElementById('cv3'),ctx=cv.getContext&&cv.getContext('2d');
+    if(!ctx){document.getElementById('fb3').style.display='flex';document.getElementById('fb3why').textContent='NO 2D CONTEXT';return;}
+    SGL.ctx=ctx;SCENE=build3D();
+    var lastW=0,lastH=0,t=0;
+    function resize(){
+      var w=cv.clientWidth||600,h=cv.clientHeight||460;if(!w||!h)return;
+      if(w===lastW&&h===lastH)return;lastW=w;lastH=h;
+      SGL.DPR=Math.min(window.devicePixelRatio||1,2);
+      cv.width=w*SGL.DPR;cv.height=h*SGL.DPR;SGL.W=cv.width;SGL.H=cv.height;
+      SGL.f=SGL.FOV*SGL.DPR*Math.min(w/1100,1.1);
+    }
+    var drag=false,px=0,py=0;
+    cv.addEventListener('pointerdown',function(e){drag=true;px=e.clientX;py=e.clientY;});
+    window.addEventListener('pointermove',function(e){if(!drag)return;
+      SGL.yaw+=(e.clientX-px)*0.006;SGL.pitch=Math.max(-0.6,Math.min(0.7,SGL.pitch+(e.clientY-py)*0.004));
+      px=e.clientX;py=e.clientY;});
+    window.addEventListener('pointerup',function(){drag=false;});
+    cv.addEventListener('wheel',function(e){e.preventDefault();SGL.dist=Math.max(22,Math.min(95,SGL.dist+e.deltaY*0.03));},{passive:false});
+    function frame(){
+      requestAnimationFrame(frame);resize();if(!SGL.W)return;
+      if(!drag)SGL.yaw+=0.001;
+      t+=0.016;
+      ctx.fillStyle='#121110';ctx.fillRect(0,0,SGL.W,SGL.H);
+      draw3D(t);
+    }
+    frame();
+  })();
+})();
+</script>
+</body>
+</html>
